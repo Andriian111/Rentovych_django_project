@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Books
+from .models import Employee
 
 
 def mainPage(requst):
-    books = Books.objects.all()
+    books = Employee.objects.all()
     return render(requst, "main/base.html", {'tittle': 'Main page site', 'books':books})
