@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title%}{% endblock %}</title>
+    <title>{% block title%}Головна{% endblock %}</title>
 </head>
 <body>
-    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-          <span class="fs-4">Rentovych</span>
-        </a>
-        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-          <a class="me-3 py-2 text-dark text-decoration-none" href="/users">Users</a>
-        </nav>
-      </div>
-      {% block content%}{% endblock %}
+    <div class="container">
+      <div class="col-md-10 offset-md-1 mt-5">
+      <div class="jumbotron">
+        <b><a href = "{% url 'base_paig' %}" class="display-4">Головна сторінка</a></b>
+
+        <p><a href = "{% url 'car_insert' %}" class="lead font-italic">Машини</a></p>
+        <hr class="my-4">
+      {% block content%}
+      Everthing about rent
+      {% endblock content%}
+      
+      <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script><script   type='text/javascript' src='https://www.scriptreaderpro.com/wp-includes/js/wp-embed.min.js?ver=5.8.2' id='wp-embed-js' defer></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></script>
 </body>
 </html>

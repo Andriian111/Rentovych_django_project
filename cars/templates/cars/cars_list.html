@@ -18,15 +18,14 @@ List cars
       display: inline-block;
       font-size: 16px;
       margin: 4px 2px;
-      cursor: pointer;
-    }
+      cursor: pointer;}
     </style>
-    <a href="{% url 'car_insert' %}" class="button">
+    <a href="{% url 'car_update' %}" class="button">
     <i class="fas fa-plus"></i>Add new car
     </a>
 <table border="1" cellpadding="7" cellspacing="0" cols = 6>
      <thead class="border-bottom font-weight-bold">
-        <tr>
+        <tr><td rowspan="1" width="5%" align="center">ID</td>>
             <td rowspan="1" width="10%"  bgcolor="#D3EDF6" align="center">Марка машини</td>>
             <td width="10%" valign="top" align="center">Рік виготовлення машини</td>
             <td width="15%" valign="top" align="center" align="center">Номерний знак машини</td>
@@ -35,8 +34,9 @@ List cars
             <td width="15%" valign="top" align="center">Фото машини</td>
                 </tr>
     </thead>
+    {% if cars_list%}
     {% for car in cars_list  %}
-    <tr>
+    <tr><td>{{car.id}}</td>
         <td>{{car.mark_car}}</td>
         <td>{{car.year_create}}</td>
         <td>{{car.number_car}}</td>
@@ -44,6 +44,11 @@ List cars
         <td>{{car.kilometrage_car}}</td>
         <td>{{car.photo_car}}</td></tr>
         {%endfor%}
+        {% else %}
+        <p>Table empty</p>
+    {%endif%}
     </tbody>
 </table>
+    
+
 {% endblock content%}
